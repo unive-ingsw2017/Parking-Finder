@@ -7,7 +7,7 @@
     <dimen name="info_padding_2">40dp</dimen>
     <dimen name="info_text_size">20dp</dimen>
     <dimen name="linear_layout_height">250dp</dimen>
-    <dimen name="linear_layout_width">150dp</dimen>
+    <dimen name="linear_layout_width">50dp</dimen>
     <dimen name="linear_layout_margin_bottom">40dp</dimen>
     <dimen name="linear_layout_margin_left">10dp</dimen>
     <dimen name="button_margin">10dp</dimen>

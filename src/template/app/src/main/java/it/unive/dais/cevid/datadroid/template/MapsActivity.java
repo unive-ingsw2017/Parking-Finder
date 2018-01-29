@@ -46,6 +46,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -152,16 +153,18 @@ public class MapsActivity extends AppCompatActivity
                 updateCurrentPosition();
                 if (hereMarker != null) hereMarker.remove();
                 if (currentPosition != null) {
+
                     MarkerOptions opts = new MarkerOptions();
                     opts.position(currentPosition);
                     opts.title(getString(R.string.marker_title));
                     opts.snippet(String.format("lat: %g\nlng: %g", currentPosition.latitude, currentPosition.longitude));
                     hereMarker = gMap.addMarker(opts);
-
                     piazzaMarker(); //aggiungo i marker
+
 
                     if (gMap != null)
                         gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, getResources().getInteger(R.integer.zoomFactor_button_here)));
+                    Toast.makeText(MapsActivity.this,"i parcheggi nel raggio di 2 km sono stati caricati",Toast.LENGTH_SHORT).show();
                 } else
                     Log.d(TAG, "no current position available");
             }
@@ -189,7 +192,7 @@ public class MapsActivity extends AppCompatActivity
                     MapItem parcheggio = piazzaParcheggioPiuVicino();
                     if (gMap != null)
                         gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(parcheggio.getPosition(), getResources().getInteger(R.integer.zoomFactor_button_here)));
-
+                    Toast.makeText(MapsActivity.this,"il parcheggio piu vicino è stato caricato",Toast.LENGTH_SHORT).show();
                 } else
                     Log.d(TAG, "no current position available");
             }
@@ -553,7 +556,6 @@ public class MapsActivity extends AppCompatActivity
         marker.showInfoWindow();
         button_car.setVisibility(View.VISIBLE);
         button_save.setVisibility(View.VISIBLE);
-        button_search.setVisibility(View.INVISIBLE);
 
         button_car.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -576,7 +578,7 @@ public class MapsActivity extends AppCompatActivity
                 Snackbar.make(v, R.string.msg_button_car, Snackbar.LENGTH_SHORT);
                 if(currentPosition!=null)
                     salvaParcheggio();
-                Toast.makeText(MapsActivity.this,"il parcheggio è stato salvato",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MapsActivity.this,"il parcheggio selezionato è stato salvato",Toast.LENGTH_SHORT).show();
 
 
             }
@@ -601,7 +603,8 @@ public class MapsActivity extends AppCompatActivity
     protected <I extends MapItem> Collection<Marker> putMarkersFromMapItems(List<I> l) {
         Collection<Marker> r = new ArrayList<>();
         for (MapItem i : l) {
-            MarkerOptions opts = new MarkerOptions().title(i.getTitle()).position(i.getPosition()).snippet(i.getDescription());
+            MarkerOptions opts = new MarkerOptions().title(i.getTitle()).position(i.getPosition()).snippet(i.getDescription()).icon(BitmapDescriptorFactory.fromResource(R.mipmap.park));
+            //MarkerOptions opts = new MarkerOptions().title(i.getTitle()).position(i.getPosition()).snippet(i.getDescription());
             r.add(gMap.addMarker(opts));
         }
         return r;
@@ -696,7 +699,7 @@ public class MapsActivity extends AppCompatActivity
                 Location.distanceBetween(Double.parseDouble(lat),Double.parseDouble(lng),lati,longi,distanza);
 
                // if(r.get("Comune").equals("Venezia"))
-               if(distanza[0]<3000)/*carica solo i parcheggi al raggio di 3km*/
+               if(distanza[0]<2000)/*carica solo i parcheggi al raggio di 2km*/
                     l.add(new MapItem() {
                         @Override
                         public LatLng getPosition() {
