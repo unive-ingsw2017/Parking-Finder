@@ -184,9 +184,10 @@ public class MapsActivity extends AppCompatActivity
                     hereMarker = gMap.addMarker(opts);
 
 
-                    piazzaParcheggioPiuVicino();
+
+                    MapItem parcheggio = piazzaParcheggioPiuVicino();
                     if (gMap != null)
-                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, getResources().getInteger(R.integer.zoomFactor_button_here)));
+                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(parcheggio.getPosition(), getResources().getInteger(R.integer.zoomFactor_button_here)));
 
                 } else
                     Log.d(TAG, "no current position available");
@@ -713,7 +714,7 @@ public class MapsActivity extends AppCompatActivity
 
     }
 
-    private void piazzaParcheggioPiuVicino() {
+    private MapItem piazzaParcheggioPiuVicino() {
 
 
 
@@ -766,11 +767,12 @@ public class MapsActivity extends AppCompatActivity
             l.add(piuVicino);
             markers = putMarkersFromMapItems(l);
 
+           return (piuVicino);
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
-
+          return null;
     }
 
     String nomefile = "parcheggio";

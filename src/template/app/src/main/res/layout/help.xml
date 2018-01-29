@@ -6,7 +6,8 @@
     android:weightSum="1"
     android:baselineAligned="false"
     android:orientation="vertical"
-    android:background="@mipmap/img">
+    android:background="@mipmap/help"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,12 +23,12 @@
         <TextView
             android:id="@+id/helpText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.11"
-            android:text="ricerca\n yy"
+            android:text="text\n "
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp"
             android:textStyle="bold|italic" />
 
     </ScrollView>
