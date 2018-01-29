@@ -15,10 +15,21 @@
         android:layout_marginLeft="@dimen/linear_layout_margin_left"
         android:gravity="start"
         android:orientation="vertical"
-        android:weightSum="3">
+        android:weightSum="4">
 
 
 
+
+        <ImageButton
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_weight="1"
+            android:background="@color/trans"
+            android:scaleType="fitStart"
+            android:src="@drawable/button_save"
+            android:visibility="invisible" />
 
         <ImageButton
             android:id="@+id/button_car"

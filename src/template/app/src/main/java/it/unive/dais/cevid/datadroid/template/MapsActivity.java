@@ -95,7 +95,7 @@ public class MapsActivity extends AppCompatActivity
      * Pulsanti in sovraimpressione gestiti da questa app. Da non confondere con i pulsanti che GoogleMaps mette in sovraimpressione e che non
      * fanno parte degli oggetti gestiti manualmente dal codice.
      */
-    protected ImageButton button_search, button_car,button_Parcheggio_piu_vicino;
+    protected ImageButton button_search, button_car,button_Parcheggio_piu_vicino,button_save;
     /**
      * API per i servizi di localizzazione.
      */
@@ -131,6 +131,7 @@ public class MapsActivity extends AppCompatActivity
         button_search = (ImageButton) findViewById(R.id.button_search);
         button_car = (ImageButton) findViewById(R.id.button_car);
         button_Parcheggio_piu_vicino = (ImageButton) findViewById(R.id.button_parcheggio_vicino);
+        button_save  = (ImageButton) findViewById(R.id.button_save);
 
 
         // API per i servizi di localizzazione
@@ -329,11 +330,6 @@ public class MapsActivity extends AppCompatActivity
                   caricaParcheggio();
                 break;
 
-            case R.id.SALVA_PARCHEGGIO:
-                // startActivity(new Intent(this, InfoActivity.class));
-                if(currentPosition!=null)
-                  salvaParcheggio();
-                break;
 
         }
         return false;
@@ -419,6 +415,8 @@ public class MapsActivity extends AppCompatActivity
     public void onMapClick(LatLng latLng) {
         // nascondi il pulsante della navigazione (non quello di google maps, ma il nostro pulsante custom)
         button_car.setVisibility(View.INVISIBLE);
+        button_save.setVisibility(View.INVISIBLE);
+
     }
 
     /**
@@ -554,6 +552,7 @@ public class MapsActivity extends AppCompatActivity
         lastMarker=marker.getPosition();
         marker.showInfoWindow();
         button_car.setVisibility(View.VISIBLE);
+        button_save.setVisibility(View.VISIBLE);
         button_search.setVisibility(View.INVISIBLE);
 
         button_car.setOnClickListener(new View.OnClickListener() {
@@ -568,6 +567,21 @@ public class MapsActivity extends AppCompatActivity
 
             }
         });
+
+
+        button_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Snackbar.make(v, R.string.msg_button_car, Snackbar.LENGTH_SHORT);
+                if(currentPosition!=null)
+                    salvaParcheggio();
+                Toast.makeText(MapsActivity.this,"il parcheggio è stato salvato",Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
         return false;
     }
 

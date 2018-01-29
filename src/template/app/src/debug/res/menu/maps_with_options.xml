@@ -8,8 +8,6 @@
         android:title="Help" />
     <item android:id="@+id/PARCHEGGI_SALVATI"
         android:title="Carica Parcheggio Salvato" />
-    <item android:id="@+id/SALVA_PARCHEGGIO"
-        android:title="Salva Parcheggio" />
 
 <!--
     <item android:id="@+id/search"

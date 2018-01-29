@@ -26,7 +26,7 @@ public class Help extends AppCompatActivity {
                 "2.\tSeleziona il parcheggio che preferisci per poter avviare le indicazioni stradali \n" +
                 "3.\t Premi il pulsante “Avvia percorso” per iniziare la navigazione con Google Maps \n" +
                 "4.\tPer scegliere un altro parcheggio selezionalo sulla mappa. \n" +
-                "5.\tAttraverso il menù si puo salvare il parcheggio selezionato oppure caricare l'ultimo parcheggio salvato \n");
+                "5.\til parcheggio selezionato puo essere salvato tramite l'apposita icona che compare una volta selezionato il parcheggio per poi essere caricato in un secondo momento dal menu\n");
 
 
 
