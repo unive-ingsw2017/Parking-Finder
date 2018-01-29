@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/MENU_SETTINGS"
+        android:title="@string/action_impostazioni" />
+    <item android:id="@+id/MENU_INFO"
+        android:title="@string/action_info" />
+    <item android:id="@+id/MENU_HELP"
+        android:title="Help" />
+    <item android:id="@+id/PARCHEGGI_SALVATI"
+        android:title="Carica Parcheggio Salvato" />
+    <item android:id="@+id/SALVA_PARCHEGGIO"
+        android:title="Salva Parcheggio" />
+
+<!--
+    <item android:id="@+id/search"
+        android:title="@string/search_title"
+        android:showAsAction="always|collapseActionView"
+        android:actionViewClass="android.widget.SearchView" />
+-->
+</menu>

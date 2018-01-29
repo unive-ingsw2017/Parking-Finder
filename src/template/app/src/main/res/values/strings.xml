@@ -1,0 +1,41 @@
+<resources>
+    <!-- Customize your app's name here. -->
+    <string name="app_name">Parking Finder</string>
+    <string name="title_activity_maps">Parking Finder</string>
+    <!-- -->
+
+    <string name="gps_disabled">GPS disattivato</string>
+    <string name="gps_enabled">GPS attivato</string>
+    <string name="conn_failed">Connessione fallita</string>
+    <string name="conn_suspended">Connessione sospesa</string>
+
+
+    <string name="menu_mapStyle_title">Stile Mappa</string>
+    <string name="menu_mapStyle_summary">Scegli il tipo di mappa di Google Maps</string>
+    <string name="menu_zoomThreshold_title">Soglia di Zoom</string>
+    <string name="menu_zoomThreshold_summary">Soglia oltre la quale scompare il pulsante per impostare il marker</string>
+    <string name="menu_checkBox_title">Aggiornamento Automatico</string>
+    <string name="menu_checkBox_summary">Verifica la presenza di versioni più recenti.</string>
+
+    <string name="menu_zoomThreshold_low">Basso</string>
+    <string name="menu_zoomThreshold_mid">Medio</string>
+    <string name="menu_zoomThreshold_high">Alto</string>
+    <string name="menu_mapStyle_normal">Standard</string>
+    <string name="menu_mapStyle_satellite">Satellite</string>
+    <string name="menu_mapStyle_terrain">Terreno</string>
+    <string name="menu_mapStyle_hybrid">Ibrido</string>
+
+    <string name="credits_year">2017</string>
+    <string name="credits_project">CEVID</string>
+    <string name="credits_company">Università Ca\' Foscari Venezia</string>
+    <string name="credits_authors">Alvise Spanò Abdelmoughit faris Tusar Dhali Gianfilippo Bellin Badr Wahmane</string>
+
+    <string name="action_info">Info</string>
+    <string name="action_impostazioni">Impostazioni</string>
+
+    <string name="msg_loading">Caricamento...</string>
+    <string name="msg_button_car">Pulsante premuto</string>
+    <string name="msg_permissions_not_granted">I permessi appena negati dall\'utente sono necessari per alcune funzionalità dell\'app. Il supporto delle funzionalità sarà ridotto.</string>
+    <string name="marker_title">sei qui</string>
+
+</resources>

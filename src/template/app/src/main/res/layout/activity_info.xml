@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/imgView_1"
+        android:layout_width="@dimen/img_info"
+        android:layout_height="@dimen/img_info"
+        android:src="@mipmap/info_img"
+        android:padding="@dimen/info_padding"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.5"/>
+        <ScrollView
+            android:id="@+id/info_scrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/info_text_size"
+                android:padding="@dimen/info_padding_2"
+                android:textColor="@color/white"
+                />
+            </RelativeLayout>
+        </ScrollView>
+
+</RelativeLayout>

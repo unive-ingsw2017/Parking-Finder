@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="zoomFactor_button_here">19</integer>
+    <integer name="zoomFactor_low">0</integer>
+    <integer name="zoomFactor_mid">10</integer>
+    <integer name="zoomFactor_high">18</integer>
+</resources>

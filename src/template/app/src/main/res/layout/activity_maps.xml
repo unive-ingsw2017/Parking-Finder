@@ -1,0 +1,70 @@
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="it.unive.dais.cevid.template.MapsActivity">
+
+    <LinearLayout
+        android:layout_width="@dimen/linear_layout_width"
+        android:layout_height="@dimen/linear_layout_height"
+        android:layout_gravity="start|bottom"
+        android:layout_marginBottom="@dimen/linear_layout_margin_bottom"
+        android:layout_marginLeft="@dimen/linear_layout_margin_left"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+
+
+
+        <ImageButton
+            android:id="@+id/button_car"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_weight="1"
+            android:background="@color/trans"
+            android:scaleType="fitStart"
+            android:src="@drawable/button_car"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/button_parcheggio_vicino"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_weight="1"
+            android:background="@color/trans"
+            android:scaleType="fitStart"
+            android:src="@drawable/button_parcheggio_piu_vicino"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/button_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_weight="1"
+            android:background="@color/trans"
+            android:scaleType="fitStart"
+            android:src="@drawable/button_search"
+            android:visibility="visible" />
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</fragment>
