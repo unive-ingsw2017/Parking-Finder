@@ -14,7 +14,6 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -143,6 +142,9 @@ public class MapsActivity extends AppCompatActivity
         mapFragment.getMapAsync(this);
 
         // quando viene premito il pulsante HERE viene eseguito questo codice
+
+
+
         button_search.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -167,6 +169,16 @@ public class MapsActivity extends AppCompatActivity
                     Toast.makeText(MapsActivity.this,"i parcheggi nel raggio di 2 km sono stati caricati",Toast.LENGTH_SHORT).show();
                 } else
                     Log.d(TAG, "no current position available");
+
+
+
+                Log.d("onClick", "Button is Clicked");
+
+
+
+
+
+
             }
 
 
@@ -204,7 +216,6 @@ public class MapsActivity extends AppCompatActivity
 
 
     }
-
 
 
 
@@ -685,7 +696,7 @@ public class MapsActivity extends AppCompatActivity
         updateCurrentPosition();
         try {
 
-            InputStream is = getResources().openRawResource(R.raw.parcheggi_venezia);
+            InputStream is = getResources().openRawResource(R.raw.parcheggi_italia);
             CsvRowParser p = new CsvRowParser(new InputStreamReader(is), true, ";");
 
             List<CsvRowParser.Row> rows = p.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR).get();
@@ -740,7 +751,7 @@ public class MapsActivity extends AppCompatActivity
         try {
             double min=100000;
             MapItem piuVicino=null;
-            InputStream is = getResources().openRawResource(R.raw.parcheggi_venezia);
+            InputStream is = getResources().openRawResource(R.raw.parcheggi_italia);
             CsvRowParser p = new CsvRowParser(new InputStreamReader(is), true, ";");
 
             List<CsvRowParser.Row> rows = p.getAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR).get();
@@ -843,3 +854,5 @@ public class MapsActivity extends AppCompatActivity
 
 
 }
+
+

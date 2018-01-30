@@ -27,7 +27,7 @@
             android:layout_weight="0.11"
             android:text="text\n "
             android:textAlignment="center"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold|italic" />
 
