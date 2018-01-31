@@ -161,7 +161,7 @@ public class MapsActivity extends AppCompatActivity
                     opts.title(getString(R.string.marker_title));
                     opts.snippet(String.format("lat: %g\nlng: %g", currentPosition.latitude, currentPosition.longitude));
                     hereMarker = gMap.addMarker(opts);
-                    piazzaMarker(); //aggiungo i marker
+                    piazzaParcheggi(); //aggiungo i marker
 
 
                     if (gMap != null)
@@ -589,7 +589,7 @@ public class MapsActivity extends AppCompatActivity
                 Snackbar.make(v, R.string.msg_button_car, Snackbar.LENGTH_SHORT);
                 if(currentPosition!=null)
                     salvaParcheggio();
-                Toast.makeText(MapsActivity.this,"il parcheggio selezionato è stato salvato",Toast.LENGTH_SHORT).show();
+
 
 
             }
@@ -690,7 +690,7 @@ public class MapsActivity extends AppCompatActivity
     @Nullable
     private Collection<Marker> markers;
 
-    private void piazzaMarker() {
+    private void piazzaParcheggi() {
 
         gMap.clear();
         updateCurrentPosition();
@@ -816,7 +816,9 @@ public class MapsActivity extends AppCompatActivity
             FileOutputStream fos = openFileOutput(nomefile, Context.MODE_PRIVATE);
             fos.write(stringa.getBytes());
             fos.close();
+            Toast.makeText(MapsActivity.this,"il parcheggio selezionato è stato salvato",Toast.LENGTH_SHORT).show();
         }catch (IOException e) {
+            Toast.makeText(MapsActivity.this,"ERRORE:il parcheggio non è stato salvato",Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
 
@@ -848,6 +850,7 @@ public class MapsActivity extends AppCompatActivity
                navigate(currentPosition,new LatLng(Double.parseDouble(lat), Double.parseDouble(lng)) );
             fos.close();
         }catch (IOException e) {
+            Toast.makeText(MapsActivity.this,"ERRORE:il file con il parcheggio non è stato trovato",Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
